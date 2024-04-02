@@ -23,6 +23,7 @@ module "orch-sa-cmp-0" {
   iam = {
     "roles/iam.serviceAccountTokenCreator" = [local.groups_iam.data-engineers]
     "roles/iam.serviceAccountUser"         = [module.orch-sa-cmp-0.iam_email]
+    "roles/composer.ServiceAgentV2Ext"         = [module.orch-sa-cmp-0.iam_email]
   }
 }
 
@@ -32,25 +33,25 @@ resource "google_composer_environment" "orch-cmp-0" {
   name     = "${var.prefix}-orc-cmp-0"
   region   = var.region
   config {
-    node_count = var.composer_config.node_count
+    #node_count = var.composer_config.node_count
     node_config {
-      zone                 = "${var.region}-b"
+      #zone                 = "${var.region}-b"
       service_account      = module.orch-sa-cmp-0.email
       network              = local.orch_vpc
       subnetwork           = local.orch_subnet
       tags                 = ["composer-worker", "http-server", "https-server"]
       enable_ip_masq_agent = true
-      ip_allocation_policy {
-        use_ip_aliases = "true"
-        cluster_secondary_range_name = "pods"
+      #ip_allocation_policy {
+        #use_ip_aliases = "true"
+        #cluster_secondary_range_name = "pods"
         #cluster_secondary_range_name = try(
         #  var.network_config.composer_secondary_ranges.pods, "pods"
         #)
-        services_secondary_range_name = "services"
+        #services_secondary_range_name = "services"
         #services_secondary_range_name = try(
         #  var.network_config.composer_secondary_ranges.services, "services"
         #)
-      }
+      #}
     }
     private_environment_config {
       enable_private_endpoint = "true"
@@ -60,9 +61,9 @@ resource "google_composer_environment" "orch-cmp-0" {
       master_ipv4_cidr_block = try(
         var.network_config.composer_ip_ranges.gke_master, "10.20.11.0/28"
       )
-      web_server_ipv4_cidr_block = try(
-        var.network_config.composer_ip_ranges.web_server, "10.20.11.16/28"
-      )
+     # web_server_ipv4_cidr_block = try(
+     #   var.network_config.composer_ip_ranges.web_server, "10.20.11.16/28"
+     # )
     }
     software_config {
       image_version = var.composer_config.airflow_version

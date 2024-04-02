@@ -28,7 +28,7 @@ variable "composer_config" {
   })
   default = {
     node_count      = 3
-    airflow_version = "composer-1-airflow-2"
+    airflow_version = "composer-2-airflow-2"
     env_variables   = {}
   }
 }
