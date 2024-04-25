@@ -80,7 +80,8 @@ def call_api_dataflow(project_id, region, table_name, url_template, driver_jar, 
            'network': 'default',
            'subnetwork': 'https://www.googleapis.com/compute/v1/projects/{0}/regions/{1}/subnetworks/default'.format(
                project_id, region),
-           'tempLocation': bq_temp_dir
+           'tempLocation': bq_temp_dir,
+           'ipConfiguration': 'WORKER_IP_PRIVATE'
        }
 
        dataflow = build('dataflow', 'v1b3', cache_discovery=False)

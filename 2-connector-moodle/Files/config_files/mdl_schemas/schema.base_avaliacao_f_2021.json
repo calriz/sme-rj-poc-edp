@@ -1,0 +1,26 @@
+[
+    {
+        "name": "id",
+        "type": "INTEGER"
+    },
+    {
+        "name": "matricula",
+        "type": "INTEGER"
+    },
+    {
+        "name": "serie",
+        "type": "INTEGER"
+    },
+    {
+        "name": "bimestre_1",
+        "type": "STRING"
+    },
+    {
+        "name": "bimestre_2",
+        "type": "STRING"
+    },
+    {
+        "name": "bimestre_3",
+        "type": "STRING"
+    }
+]
