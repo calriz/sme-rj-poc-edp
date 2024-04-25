@@ -9,7 +9,7 @@
   "url_template": "gs://dataflow-templates-{0}/latest/Jdbc_to_BigQuery",
   "driver_jar": "Driver-JDBC/mysql-connector-j-8.0.31.jar",
   "driverclsname": "com.mysql.jdbc.Driver",
-  "conn_url": "jdbc:mysql://34.16.115.89/base-avaliacao",
+  "conn_url": "jdbc:mysql://34.16.115.89/base_avaliacao",
   "conn_user": "root",
   "conn_pass": "g{8(kF-r{t/'(HP3",
   "bq_temp_dir": "temp",
