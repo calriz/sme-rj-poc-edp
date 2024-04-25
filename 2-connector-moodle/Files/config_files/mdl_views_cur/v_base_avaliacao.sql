@@ -1,5 +1,5 @@
 
-    SELECT *, 2021 ano_base
+    SELECT *, null as bimestre_4, 2021 ano_base
   FROM `[prj_id_lnd].[dts_nm_lnd].base_avaliacao_f_2021`
 
   UNION ALL
