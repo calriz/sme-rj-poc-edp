@@ -20,7 +20,8 @@
   "dir_views_cur": "gs://sme-poc-edp-load-cs-0/Files/config_files/mdl_views_cur.tar.gz",
   "tables": [
     "base_avaliacao_f_2021",
-    "base_avaliacao_f_2022"
+    "base_avaliacao_f_2022",
+    "base_avaliacao_f_2023"
   ],
   "tables_with_polices":[],
   "network": "sme-poc-edp-default",
